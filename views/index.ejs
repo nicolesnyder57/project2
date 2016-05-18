@@ -1,0 +1,83 @@
+<% include partials/header %>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+<body background="http://i.huffpost.com/gen/1298855/images/o-REDWOOD-TREES-facebook.jpg">
+
+</body>
+
+        <div id="section">
+    <p>Welcome to the Sonoma County Parks Webpage!
+        <br>
+    Here you can view different parks in Sonoma County to help you decide which ones to
+    visit. You can view ratings on parks to see which ones are most popular.
+        <br>
+        Click 'View Parks' to get started!
+        </p>
+</div>
+
+
+    <div id="nav">
+
+        <a href="/parks/all">View Parks</a>
+        <br>
+        <a href="/parks/create">Enter a New Park</a>
+        <br>
+        <a href="/ratings/all">View Park Ratings</a>
+        <br>
+        <a href="/hikes/all">View Hiking Trails</a>
+        <br>
+        <a href="/hikes/new">Enter a New Hiking Trail</a>
+        <br>
+        <a href="/ratings/new">Rate A Park</a>
+        <br>
+        <a href="/camp/all">View Campsite Info</a>
+        <br>
+        <a href="/about">About Us</a>
+
+
+    </div>
+
+<% include partials/footer %>
+
+    </body>
+</html>
+
+<style>
+
+
+  p {
+      color:black;
+      font-weight: bold;
+  }
+  #nav {
+      background-color: #ffffff;
+    color:black;
+    text-align:left;
+      font-weight: bold;
+    float:left;
+    height:430px;
+    width:250px;
+    padding:10px;
+      opacity: 0.77;
+      filter: alpha(opacity=90);
+      border: 1px solid black;
+  }
+
+  #section {
+
+      text-align:center;
+      background-color: #ffffff;
+      font-weight: bold;
+      border: 1px solid black;
+      opacity: 0.77;
+      filter: alpha(opacity=75);
+  }
+  th{
+    color: whitesmoke;
+    background-color:black;
+    border: 1px solid black;
+  }
+
+
+</style>

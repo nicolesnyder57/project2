@@ -1,0 +1,32 @@
+<% include partials/header %>
+<body background="http://www.outdoorproject.com/sites/default/files/styles/cboxshow/public/1401657608/dsc_0045.jpg?itok=0J06RRK9">
+
+</body>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Hiking Trail Name</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/hikes/?hiking_trail_id=<%= rs[i].hiking_trail_id %>"><%= rs[i].trail_name %></a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No Trails exist.
+    <% } %>
+</div>
+
+<style>
+    div{
+        background-color: #ffffff;
+        color:black;
+        text-align:left;
+        font-weight: bold;
+        float:left;
+        padding:10px;
+        opacity: 0.77;
+        filter: alpha(opacity=90);
+        border: 1px solid black;
+    }</style>
+<% include partials/footer %>

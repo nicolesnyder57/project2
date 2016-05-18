@@ -1,0 +1,24 @@
+<% js_includes = []%>
+<% include partials/header %>
+
+<h1>Add a New Rating</h1>
+<form method="POST" action="/ratings/insert_rating">
+    Rating(from 1-10)
+     <input type="text" id="rating" name="rating" /> <br />
+
+    <br />
+
+    Which park would you like to rate? <br />
+    <% for( var i = 0; i < p.length; i++) { %>
+    <input type="checkbox"
+           name="park_id"
+           id="park_id"
+           value="<%= p[i].park_id %>"><%= p[i].park_name %> <br />
+    <% } %>
+
+    <br />
+    <button id="addBtn">Add</button>
+
+</form>
+
+<% include partials/footer %>

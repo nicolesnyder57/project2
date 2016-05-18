@@ -1,0 +1,35 @@
+<% include partials/header %>
+<% if(rs.length > 0) { %>
+<body background="https://clsphotos.files.wordpress.com/2011/05/img_5184.jpg">
+
+</body>
+<ul>
+    <% for(var i=0; i < rs.length; i++) {%>
+    <li>Park Name: <%= rs[0].park_name %></li>
+    <li>Hours: <%= rs[i].hours %></li>
+    <li>Parking Price: <%= rs[i].parking_price %></li>
+    <li>Dogs allowed: <%= rs[i].dogs %></li>
+    <% } %>
+</ul>
+<% } else { %>
+No park matched park id <%= park_id %>.
+<% } %>
+
+
+
+<style>
+    ul {
+        background-color: #ffffff;
+        color:black;
+        text-align:left;
+        font-weight: bold;
+        float:left;
+        padding:10px;
+        height: 500px;
+        opacity: 0.77;
+        filter: alpha(opacity=90);
+        border: 1px solid black;
+    }
+</style>
+
+<% include partials/footer %>

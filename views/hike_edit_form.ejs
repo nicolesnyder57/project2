@@ -1,0 +1,31 @@
+<% include partials/header.ejs %>
+
+<% if (typeof message !== 'undefined') { %>
+<div><%= message %></div>
+<% } %>
+
+<% if(rs.length > 0) { %>
+<h1>Edit Park</h1>
+<form method="POST" action="/hikes/update_hike">
+    <input type="hidden" name="hiking_trail_id" value="<%= rs[0].hiking_trail_id %>" />
+    Trail Name <input type="text" id="trail_name" name="trail_name" value="<%= rs[0].trail_name%>" />
+    <br />
+    <br />
+    Mileage</span> <textarea name="mileage"><%= rs[0].mileage%></textarea>
+    <br />
+    <br />
+    Elevation Level</span> <textarea name="elevation_level"><%= rs[0].elevation_level%></textarea>
+    <br />
+    <br />
+    Level of Difficulty</span> <textarea name="level_of_dificulty"><%= rs[0].level_of_dificulty%></textarea>
+    <br />
+    <br />
+
+    <button id="addBtn">Edit</button>
+</form>
+
+<% } else { %>
+No hiking trail matches that ID.
+<% } %>
+
+<% include partials/footer.ejs %>

@@ -1,0 +1,35 @@
+<% include partials/header %>
+<body background="http://www.outdoorproject.com/sites/default/files/styles/cboxshow/public/1401657608/dsc_0045.jpg?itok=0J06RRK9">
+
+</body>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Phone Number</th><th>Lodging Type</th><th>Max RV size</th><th>Day Use Price<th>Max # People Per Site</tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><%= rs[i].reservation_phone_num%></td>
+            <td><%= rs[i].lodging_type %></td>
+            <td><%= rs[i].max_RV_size %></td>
+            <td><%= rs[i].day_use_price %></td>
+            <td><%= rs[i].max_people_per_site %></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No Trails exist.
+    <% } %>
+</div>
+<style>
+    div{
+        background-color: #ffffff;
+        color:black;
+        text-align:left;
+        font-weight: bold;
+        float:left;
+        padding:10px;
+        opacity: 0.77;
+        filter: alpha(opacity=90);
+        border: 1px solid black;
+    }</style>
+<% include partials/footer %>

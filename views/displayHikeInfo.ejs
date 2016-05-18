@@ -1,0 +1,39 @@
+<% include partials/header %>
+<body background="http://www.outdoorproject.com/sites/default/files/styles/cboxshow/public/1401657608/dsc_0045.jpg?itok=0J06RRK9">
+
+</body>
+<% if(rs.length > 0) { %>
+
+<ul>
+    Trail Name: <%= rs[0].trail_name %>
+    <% for(var i=0; i < rs.length; i++) {%>
+    <li>Mileage: <%= rs[i].mileage %> mile(s)</li>
+    <li>Level of Difficulty: <%= rs[i].level_of_dificulty %> out of 10</li>
+    <li>Elevation Level: <%= rs[i].elevation_level %></li>
+    <li>Park Name: <%= rs[i].park_name %></li>
+    <% } %>
+
+
+</ul>
+<% } else { %>
+No trail matched trail id <%= hiking_trail_id %>.
+<% } %>
+
+
+
+<style>
+ul {
+background-color: #ffffff;
+color:black;
+text-align:left;
+font-weight: bold;
+float:left;
+padding:10px;
+    height: 500px;
+opacity: 0.77;
+filter: alpha(opacity=90);
+border: 1px solid black;
+}
+</style>
+
+<% include partials/footer %>

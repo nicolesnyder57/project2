@@ -1,0 +1,30 @@
+<% js_includes = []%>
+<% include partials/header %>
+
+<h1>Add a New Hiking Trail</h1>
+<form method="POST" action="/hikes/insert_hike">
+    Trail Name <input type="text" id="trail_name" name="trail_name" /> <br />
+    Mileage <input type="text" id="mileage" name="mileage" /> <br />
+    Elevation Level <input type="text" id="elevation_level" name="elevation_level" /> <br />
+    Level of Difficulty <input type="text" id="level_of_dificulty" name="level_of_dificulty" /> <br />
+    <br />
+
+    Which park is the trail located at?<br />
+    <% for( var i = 0; i < p.length; i++) { %>
+    <input type="checkbox"
+           name="park_id"
+           id="park_id"
+           value="<%= p[i].park_id %>"><%= p[i].park_name %> <br />
+    <% } %>
+
+    <br />
+
+    <button id="addBtn">Add</button>
+    <br><h3>Don't see the park you're looking for?
+    <br>Enter it here!</h3>
+    <a href="/parks/create">Enter a New Park</a>
+    <br>
+    <br>
+</form>
+
+<% include partials/footer %>

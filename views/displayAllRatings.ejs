@@ -1,0 +1,23 @@
+<% include partials/header %>
+
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Park Name<th>Average Rating</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><%= rs[i].park_name %></td>
+            <td><%= rs[i].avg_rating %></td>
+
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No parks exist.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+
+</div>
+<% include partials/footer %>

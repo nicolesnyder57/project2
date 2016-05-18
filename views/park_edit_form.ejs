@@ -1,0 +1,31 @@
+<% include partials/header.ejs %>
+
+<% if (typeof message !== 'undefined') { %>
+<div><%= message %></div>
+<% } %>
+
+<% if(rs.length > 0) { %>
+<h1>Edit Park</h1>
+<form method="POST" action="/parks/update_park">
+    <input type="hidden" name="park_id" value="<%= rs[0].park_id %>" />
+    Name <input type="text" id="park_name" name="park_name" value="<%= rs[0].park_name%>" />
+    <br />
+    <br />
+    Parking Price</span> <textarea name="parking_price"><%= rs[0].parking_price%></textarea>
+    <br />
+    <br />
+    Hours</span> <textarea name="hours"><%= rs[0].hours%></textarea>
+    <br />
+    <br />
+    Are dogs Allowed?</span> <textarea name="dogs"><%= rs[0].dogs%></textarea>
+    <br />
+    <br />
+
+    <button id="addBtn">Edit</button>
+</form>
+
+<% } else { %>
+No park matches that ID.
+<% } %>
+
+<% include partials/footer.ejs %>

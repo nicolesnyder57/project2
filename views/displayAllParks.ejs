@@ -1,0 +1,35 @@
+<% include partials/header %>
+<body background="https://clsphotos.files.wordpress.com/2011/05/img_5184.jpg">
+
+</body>
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>Park Name</th><th>Edit</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/parks/?park_id=<%= rs[i].park_id %>"><%= rs[i].park_name %></a></td>
+            <td>
+                <a href="/parks/edit/?park_id=<%= rs[i].park_id %>">Edit</a>
+            </td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No parks exist.
+    <% } %>
+</div>
+
+<style>
+    div{
+        background-color: #ffffff;
+        color:black;
+        text-align:left;
+        font-weight: bold;
+        float:left;
+        padding:10px;
+        opacity: 0.77;
+        filter: alpha(opacity=90);
+        border: 1px solid black;
+    }</style>
+<% include partials/footer %>

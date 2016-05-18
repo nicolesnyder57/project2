@@ -1,0 +1,39 @@
+<% include partials/header %>
+<body background="http://www.outdoorproject.com/sites/default/files/styles/cboxshow/public/1401657608/dsc_0045.jpg?itok=0J06RRK9">
+
+</body>
+<% if(rs.length > 0) { %>
+
+<ul>
+    <% for(var i=0; i < rs.length; i++) {%>
+    <li>Day Use Price: <%= rs[i].day_use_price %> mile(s)</li>
+    <li>Lodging Type <%= rs[i].lodging_type %> out of 10</li>
+    <li>Maximum People Per Campsite: <%= rs[i].max_people_per_site %></li>
+    <li>Maximim RV Size: <%= rs[i].max_RV_size %></li>
+    <li>Reservation Phone Number: <%= rs[i].reservation_phone_num %></li>
+    <% } %>
+
+
+</ul>
+<% } else { %>
+No campsite matched camp id <%= campsite_id %>.
+<% } %>
+
+
+
+<style>
+    ul {
+        background-color: #ffffff;
+        color:black;
+        text-align:left;
+        font-weight: bold;
+        float:left;
+        padding:10px;
+        height: 500px;
+        opacity: 0.77;
+        filter: alpha(opacity=90);
+        border: 1px solid black;
+    }
+</style>
+
+<% include partials/footer %>
